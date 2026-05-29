@@ -41,7 +41,13 @@
           </div>
 
           <div :class="['mt-8 pt-6 border-t flex items-center gap-3', i === 1 ? 'border-white/15' : 'border-slate-200 dark:border-white/10']">
-            <div :class="['w-11 h-11 rounded-full flex items-center justify-center font-bold text-sm', i === 1 ? 'bg-white/20 text-white' : 'bg-primary text-white']">
+            <img
+              v-if="t.avatar"
+              :src="t.avatar"
+              :alt="t.author"
+              class="w-11 h-11 rounded-full object-cover ring-2 ring-white/20"
+            />
+            <div v-else :class="['w-11 h-11 rounded-full flex items-center justify-center font-bold text-sm', i === 1 ? 'bg-white/20 text-white' : 'bg-primary text-white']">
               {{ t.initials }}
             </div>
             <div class="flex-1 min-w-0">
@@ -63,6 +69,7 @@ const testimonials = [
     quote: 'We thought 4% case shrinkage was just \"the cost of doing business.\" Three months in, we are at 0.3%. iDeal paid for itself in the first quarter.',
     author: 'Maria Santos',
     initials: 'MS',
+    avatar: '',
     role: 'Operations Director, Metro Beverage Co.',
     stat: 'Shrinkage: 4% → 0.3%',
   },
@@ -70,6 +77,7 @@ const testimonials = [
     quote: 'The NFC tap-to-deliver flow ended our dispute meetings overnight. Drivers love it because the data covers them when something goes wrong.',
     author: 'Joey Reyes',
     initials: 'JR',
+    avatar: '',
     role: 'Logistics Lead, Pacific Brews',
     stat: 'Disputes down 92%',
   },
@@ -77,6 +85,7 @@ const testimonials = [
     quote: 'Our brewers wanted real-time outlet data. iDeal gave us a single dashboard for 14 branches and 3 partner distributors. Game changer.',
     author: 'Anika Cruz',
     initials: 'AC',
+    avatar: '',
     role: 'GM, Highland Distribution',
     stat: '14 branches unified',
   },

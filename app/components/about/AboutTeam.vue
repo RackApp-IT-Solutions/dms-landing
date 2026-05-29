@@ -19,7 +19,13 @@
           :key="member.name"
           class="bg-white dark:bg-white/5 rounded-2xl p-6 text-center border border-slate-200 dark:border-white/10 hover:shadow-soft transition-all duration-300"
         >
-          <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+          <img
+            v-if="member.avatar"
+            :src="member.avatar"
+            :alt="member.name"
+            class="w-20 h-20 rounded-full object-cover mx-auto mb-4 ring-2 ring-primary/20"
+          />
+          <div v-else class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl font-bold text-primary">{{ member.initials }}</span>
           </div>
           <h3 class="text-lg font-bold text-navy-dark dark:text-white mb-1">{{ member.name }}</h3>
@@ -36,18 +42,21 @@ const team = [
   {
     name: 'Jappy Palis',
     initials: 'JP',
+    avatar: '',
     role: 'CEO',
     bio: '10+ years in supply chain management. Former Supervisor at San Miguel Beverage.',
   },
   {
     name: 'Marlex Ladag',
     initials: 'ML',
+    avatar: '/images/team-marlex.png',
     role: 'CTO',
     bio: '10+ years of experience as a full-stack architect passionate about NFC technology, integrated platforms, and real-time systems.',
   },
   {
     name: 'Rowel Medrina',
     initials: 'RM',
+    avatar: '',
     role: 'Head of Customer Success',
     bio: '10+ years of experience in the beverage distribution industry, dedicated to ensuring every client achieves measurable ROI.',
   },

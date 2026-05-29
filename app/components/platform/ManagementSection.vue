@@ -65,7 +65,7 @@
                 <div class="grid grid-cols-2 gap-4 mb-4">
                   <div class="bg-slate-800/80 backdrop-blur p-4 rounded-lg border border-slate-700">
                     <div class="text-slate-400 text-xs mb-1">Monthly Revenue</div>
-                    <div class="text-primary text-xl font-bold font-mono">$842,000</div>
+                    <div class="text-primary text-xl font-bold font-mono">₱842,000</div>
                   </div>
                   <div class="bg-slate-800/80 backdrop-blur p-4 rounded-lg border border-slate-700">
                     <div class="text-slate-400 text-xs mb-1">Active Partners</div>

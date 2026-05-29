@@ -2,30 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ----- Base tweaks ----- */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*:focus-visible {
+  outline: 2px solid #FE7702;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background-color: rgba(254, 119, 2, 0.25);
+  color: inherit;
+}
+
+/* Refined scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.35);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 139, 0.55); background-clip: padding-box; }
+
+/* ----- Utility additions (raw CSS, not @apply) ----- */
+.text-balance { text-wrap: balance; }
+.text-pretty  { text-wrap: pretty; }
+
+.mask-fade-edges {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* ----- Decorative components ----- */
 .ecosystem-line {
-  background: linear-gradient(to bottom, rgba(254, 119, 2, 0.6), rgba(254, 119, 2, 0.1));
+  background: linear-gradient(to bottom, rgba(254, 119, 2, 0.6), rgba(254, 119, 2, 0.05));
 }
 
-.pulse-ring {
-  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-}
-
+.pulse-ring { animation: pulse-ring 2.4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
 @keyframes pulse-ring {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(254, 119, 2, 0.7);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 20px rgba(254, 119, 2, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(254, 119, 2, 0);
-  }
+  0%   { transform: scale(0.96); box-shadow: 0 0 0 0 rgba(254, 119, 2, 0.55); }
+  70%  { transform: scale(1);    box-shadow: 0 0 0 24px rgba(254, 119, 2, 0); }
+  100% { transform: scale(0.96); box-shadow: 0 0 0 0 rgba(254, 119, 2, 0); }
 }
 
-/* ROI Calculator range slider */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Float used by hero floating chips */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+/* ----- Forms ----- */
 .roi-slider {
   -webkit-appearance: none;
   appearance: none;
@@ -34,11 +78,7 @@
   border-radius: 2px;
   cursor: pointer;
 }
-
-.dark .roi-slider {
-  background: #4b5563;
-}
-
+.dark .roi-slider { background: #4b5563; }
 .roi-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 20px;
@@ -46,9 +86,8 @@
   border-radius: 50%;
   background: #053B61;
   cursor: pointer;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 4px rgba(5, 59, 97, 0.12);
 }
-
 .roi-slider::-moz-range-thumb {
   height: 20px;
   width: 20px;
@@ -56,5 +95,5 @@
   background: #053B61;
   cursor: pointer;
   border: none;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 4px rgba(5, 59, 97, 0.12);
 }

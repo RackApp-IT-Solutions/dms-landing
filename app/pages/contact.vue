@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import AuditForm from '~/components/contact/AuditForm.vue';
-</script>
-
 <template>
   <div>
     <ContactHero />
@@ -13,9 +9,9 @@ import AuditForm from '~/components/contact/AuditForm.vue';
         <div class="absolute bottom-[-10%] left-[-5%] w-72 h-72 bg-primary/5 rounded-full blur-3xl opacity-50" />
       </div>
 
-      <div class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 z-10">
+      <div class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 z-10 relative">
         <div class="lg:col-span-7">
-          <AuditForm />
+          <ContactForm />
         </div>
         <div class="lg:col-span-5">
           <ContactInfo />

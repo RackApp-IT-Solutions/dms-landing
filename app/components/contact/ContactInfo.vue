@@ -86,12 +86,6 @@
     <!-- Map Placeholder -->
     <div class="h-48 rounded-xl overflow-hidden relative shadow-lg group cursor-pointer">
       <div class="w-full h-full bg-primary/20 dark:bg-primary/30" style="background-image: radial-gradient(circle, #053B61 1px, transparent 1px); background-size: 12px 12px;" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-        <div class="flex items-center text-white">
-          <MapIcon class="w-5 h-5 text-accent mr-2" />
-          <span class="text-sm font-medium">View on Google Maps</span>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -103,6 +97,5 @@ import {
   MapPinIcon,
   EnvelopeIcon,
   GlobeAltIcon,
-  MapIcon,
 } from '@heroicons/vue/24/solid'
 </script>

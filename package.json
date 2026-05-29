@@ -9,6 +9,7 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.1009.0",
     "@heroicons/vue": "^2.2.0",
     "@nuxt/content": "^3.11.2",
     "@nuxtjs/google-fonts": "^3.2.0",
@@ -16,5 +17,8 @@
     "@tailwindcss/typography": "^0.5.19",
     "better-sqlite3": "^12.6.2",
     "nuxt": "^4.3.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0"
   }
 }

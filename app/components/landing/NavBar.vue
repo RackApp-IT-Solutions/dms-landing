@@ -2,8 +2,8 @@
   <nav
     :class="[
       'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-      scrolled
-        ? 'bg-white/85 dark:bg-background-dark/85 backdrop-blur-xl border-b border-slate-200/70 dark:border-white/5 shadow-[0_1px_0_0_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.12)]'
+      scrolled || mobileMenuOpen
+        ? 'bg-white/95 dark:bg-background-dark/95 backdrop-blur-xl border-b border-slate-200/70 dark:border-white/5 shadow-[0_1px_0_0_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.12)]'
         : 'bg-transparent border-b border-transparent'
     ]"
   >
@@ -88,11 +88,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import { Bars3Icon, XMarkIcon, ArrowRightIcon } from '@heroicons/vue/24/solid'
 
 const mobileMenuOpen = ref(false)
 const scrolled = ref(false)
+
+watch(mobileMenuOpen, (open) => {
+  if (typeof document !== 'undefined') {
+    document.body.style.overflow = open ? 'hidden' : ''
+  }
+})
 
 const navItems = [
   { to: '/about', label: 'About' },
@@ -112,5 +118,8 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
+  if (typeof document !== 'undefined') {
+    document.body.style.overflow = ''
+  }
 })
 </script>

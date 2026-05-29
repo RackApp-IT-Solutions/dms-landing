@@ -44,21 +44,21 @@ const team = [
     initials: 'JP',
     avatar: '',
     role: 'CEO',
-    bio: '10+ years in supply chain management. Former Supervisor at San Miguel Beverage.',
+    bio: '10+ years in supply chain and distribution leadership — combining hands-on operations experience with a vision for building technology that solves real beverage industry problems.',
   },
   {
     name: 'Marlex Ladag',
     initials: 'ML',
     avatar: '/images/team-marlex.png',
     role: 'CTO',
-    bio: '10+ years of experience as a full-stack architect passionate about NFC technology, integrated platforms, and real-time systems.',
+    bio: '10+ years of experience as a full-stack architect passionate about business technology and applications, integrated platforms, and real-time systems.',
   },
   {
     name: 'Rowel Medrina',
     initials: 'RM',
     avatar: '',
     role: 'Head of Customer Success',
-    bio: '10+ years of experience in the beverage distribution industry, dedicated to ensuring every client achieves measurable ROI.',
+    bio: '10+ years of solid experience driving customer success and support — onboarding clients, resolving issues fast, and making sure every partner gets lasting value from the platform.',
   },
 ]
 </script>
